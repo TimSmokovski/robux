@@ -83,6 +83,12 @@
   .row { display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border-radius: 13px;
          background: var(--row); border: 1px solid var(--line); }
   .row svg { flex: none; width: 18px; height: 18px; margin-top: 3px; color: var(--mint-text); }
+  .row .dot { flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 7px; display: grid; place-items: center;
+              background: var(--mint-soft); color: var(--mint-text); font-size: 13px; font-weight: 800; }
+  .row a { color: var(--mint-text); font-weight: 700; }
+  .step.first { border-color: var(--red-line); }
+  .step.first .num { background: var(--red); color: #1a0d0d; }
+  .step.first p a { color: var(--mint-text); font-weight: 700; }
   .must { display: flex; gap: 12px; padding: 14px 16px; margin: 12px 0; border-radius: 14px;
           background: var(--red-bg); border: 1px solid var(--red-line); }
   .must svg { flex: none; width: 22px; height: 22px; color: var(--red); margin-top: 1px; }
@@ -157,6 +163,22 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
   </header>
 
+  <section class="card step first" id="noplace">
+    <h2><span class="num">!</span>Сначала: есть ли у вас плейс?</h2>
+    <p>Пасс создаётся внутри плейса, то есть вашей игры в Roblox. Откройте <b>create.roblox.com → Creations</b>.
+      Есть хоть один плейс, даже пустой? Сразу к <a href="#s1">шагу 1</a>.</p>
+    <div class="must">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg>
+      <p><span class="t">ПЛЕЙСОВ НЕТ</span>Создайте его в Roblox Studio. Это бесплатно, но нужен <b>компьютер</b>: на телефоне Studio нет.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="dot">1</span><span><a href="https://www.roblox.com/create" target="_blank" rel="noopener">Скачайте Roblox Studio</a> и войдите в свой аккаунт.</span></div>
+      <div class="row"><span class="dot">2</span><span><b>New → Baseplate</b>.</span></div>
+      <div class="row"><span class="dot">3</span><span><b>File → Publish to Roblox</b> (Alt+P) → <b>Create new experience</b> → название любое → <b>Create</b>. Публичным делать не нужно.</span></div>
+      <div class="row"><span class="dot">4</span><span>Обновите create.roblox.com → Creations: плейс появился. Дальше всё можно и с телефона.</span></div>
+    </div>
+  </section>
+
   <nav class="card stepper" aria-label="Шаги">
     <a href="#s1"><span>1</span>Плейс</a>
     <a href="#s2"><span>2</span>Пасс</a>
@@ -187,7 +209,7 @@
     <p class="path" data-for="pc"><b>Creations → Experiences</b> → любой ваш плейс</p>
     <p class="path" data-for="phone" hidden><b>☰ → Creations</b> → любой ваш плейс</p>
     <p class="small">Подойдёт даже пустой. Публичным делать не нужно, надпись под плейсом неважна.</p>
-    <p class="small">Плейсов нет совсем? <a href="#noplace" onclick="document.getElementById('noplace').open = true">Как создать плейс</a> (нужен компьютер).</p>
+    <p class="small">Плейсов нет совсем? <a href="#noplace">Как создать плейс</a> (нужен компьютер).</p>
     <figure hidden><img data-phone="img/phone-1a.jpg" alt="Меню: Creations"></figure>
     <figure hidden><img data-pc="img/pc-1.png" data-phone="img/phone-1.jpg" alt="Creations → Experiences, список плейсов"></figure>
   </section>
@@ -251,11 +273,6 @@
 
   <section class="card faq">
     <h2>Частые вопросы</h2>
-    <details id="noplace"><summary>У меня нет плейса</summary><p>Его создают в Roblox Studio на компьютере, на телефоне нельзя.<br>
-      1. Studio → <b>New → Baseplate</b>.<br>
-      2. <b>File → Publish to Roblox</b> (Alt+P).<br>
-      3. <b>Create new experience</b> → название любое → <b>Create</b>. Публичным делать не нужно.<br>
-      4. Обновите create.roblox.com → Creations: плейс появится. Дальше с шага 2.</p></details>
     <details><summary>Не вижу Monetization</summary><p>Он есть только внутри плейса: Creations → Experiences → нажмите на плейс.</p></details>
     <details><summary>Почему цена пасса больше заказа?</summary><p>Roblox забирает 30% с продажи. Их доплачиваем мы, к вам придёт ровно заказанное.</p></details>
     <details><summary>Почему пассов несколько?</summary><p>Большой заказ выкупают частями, так быстрее. В сумме придёт не меньше заказанного.</p></details>
